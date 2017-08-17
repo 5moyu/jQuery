@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>案例研究-DOM-某网站的超链接和图片的提示效果</title>
+	<script src="jquery.js"></script>
+	<style>
+		#tooltip,#tooltip1{
+			position: absolute;
+		}
+		ul li{
+			float: left;
+			list-style-type: none;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+
+	<a href="#" title="这是自带的提示1">自带提示</a>
+	<br>
+	<a href="#" class="tooltip" title="这是我的超链接提示1.">提示提示提示提示</a>
+	<br>
+
+	
+	<script>
+	var x = 10;
+	var y = 20;
+		$("a.tooltip").mouseover(function(e){
+			this.myTitle = this.title;
+			this.title = "";
+			var tooltip = "<div id='tooltip'>"+this.myTitle+"</div>";
+			
+			$("body").append(tooltip);
+			$("#tooltip").css({
+				"top":e.pageY+y + "px",
+				"left":e.pageX+x + "px"
+			}).show("fast");
+		}).mouseout(function(){
+			this.title = this.myTitle;
+			$("#tooltip").remove();
+		}).mousemove(function(e){
+			$("#tooltip").css({
+				"top":(e.pageY+y) + "px",
+				"left":(e.pageX+x) + "px"
+			});
+		});
+	</script>
+
+	
+	<ul>
+		<li>
+			<a href="img/01.jpg" class="tooltip1" title="熊猫">
+				<img src="img/01.jpg" alt="熊猫">
+			</a>
+		</li>
+		<li>
+			<a href="img/02.jpg" class="tooltip1" title="拉布拉多">
+				<img src="img/02.jpg" alt="拉布拉多">
+			</a>
+		</li>
+		<li>
+			<a href="img/03.jpg" class="tooltip1" title="小狗">
+				<img src="img/03.jpg" alt="小狗">
+			</a>
+		</li>
+		<li>
+			<a href="img/04.jpg" class="tooltip1" title="老虎">
+				<img src="img/04.jpg" alt="老虎">
+			</a>
+		</li>
+	</ul>
+
+	<script>
+	var x = 10;
+	var y = 20;
+		$("a.tooltip1").mouseover(function(e){
+			this.myTitle = this.title;
+			this.title = "";
+			var imgTitle = this.myTitle?"<br/>" + this.myTitle : "";
+			//三元运算判断this.myTitle是否为""
+			
+			var tooltip1 = "<div id='tooltip1'><img src='"+this.href + "'alt='产品预览图'/><span>"+imgTitle+"</span></div>";//创建div  元素，图片提示
+			$("body").append(tooltip1);
+			$("#tooltip1").css({
+				"top":e.pageY+y + "px",
+				"left":e.pageX+x + "px"
+			}).show("fast");
+		}).mouseout(function(){
+			this.title = this.myTitle;
+			$("#tooltip1").remove();
+		}).mousemove(function(e){
+			$("#tooltip1").css({
+				"top":(e.pageY+y) + "px",
+				"left":(e.pageX+x) + "px"
+			});
+		});
+	</script>
+</body>
+</html>
