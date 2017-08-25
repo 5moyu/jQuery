@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>视频展示效果实例</title>
+	<style>
+		.v_show{
+			border: 1px solid #ddd;
+			margin: 0;
+			width: 880px;
+			height: 280px;
+			overflow: hidden;
+		}
+		.v_caption{
+			background-color: #eee;
+			margin: 0;
+			position: relative;
+		}
+		.cartoon{
+			display: inline-block;
+			margin: 0 0 0 10px;
+			height: 36px;
+			line-height: 36px;
+			font-size: 18px;
+		}
+		.highlight_tip span{
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background-color: #ddd;
+			display: inline-block;
+			color: transparent;
+			vertical-align: middle;
+		}
+		span.current{
+			background-color: #FF3300;
+		}
+		.highlight_tip,.change_btn{
+			display: inline-block;
+			height: 36px;
+			line-height: 36px;
+			margin-left: 10px;
+		}
+		.highlight_tip span,.change_btn span{
+			cursor: pointer;
+		}
+		.v_caption em{
+			position: absolute;
+			right: 10px;
+			top: 10px;
+		}
+		.v_content{
+			margin-left: 17px;
+		}
+		.v_content_list{
+			margin-top: 20px;
+			position: relative;
+		}
+		ul{
+			padding: 0;
+			margin: 0;
+			width: 9000px;
+		}
+		li{
+			list-style:none;
+			display: inline-block;
+			margin-right: 11px;
+			margin-bottom: 20px;
+
+		}
+		li img{
+			height: 125px;
+			width: 200px;
+		}
+		a{
+			text-decoration: none;
+			color: #333;
+		}
+		a:hover{
+			color: #ff00ff;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+</head>
+<body>
+	<div class="v_show">
+		<div class="v_caption">
+			<!-- 头部标题，按钮等 -->
+			<h2 class="cartoon" title="卡通动漫">卡通动漫</h2>
+			<div class="highlight_tip">
+				<span class="current">1</span>
+				<span>2</span>
+				<span>3</span>
+				<span>4</span>
+			</div>
+			<div class="change_btn">
+				<span class="prev">上一页</span>
+				<span class="next">下一页</span>
+			</div>
+			<em><a href="#">更多>></a></em>
+		</div>
+		<div class="v_content">
+			<!-- 视频内容展示区域 -->
+			<div class="v_content_list">
+				<ul>
+					<li>
+						<a href="#"><img src="../img/01.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<li>
+						<a href="#"><img src="../img/02.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<li>
+						<a href="#"><img src="../img/03.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<li>
+						<a href="#"><img src="../img/04.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<li>
+						<a href="#"><img src="../img/05.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<li>
+						<a href="#"><img src="../img/06.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<li>
+						<a href="#"><img src="../img/07.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<li>
+						<a href="#"><img src="../img/08.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<li>
+						<a href="#"><img src="../img/01.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<li>
+						<a href="#"><img src="../img/02.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<li>
+						<a href="#"><img src="../img/03.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<li>
+						<a href="#"><img src="../img/04.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<li>
+						<a href="#"><img src="../img/05.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<li>
+						<a href="#"><img src="../img/06.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<li>
+						<a href="#"><img src="../img/07.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li>
+					<!-- <li>
+						<a href="#"><img src="../img/08.jpg" alt="海贼王"></a>
+						<h4><a href="#">海贼王</a></h4>
+						<span>播放：<em>28,276</em></span>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script>
+	var page = 1;
+	var i = 4;
+		$("span.next").click(function(){//绑定 click 事件
+			var $parent = $(this).parents("div.v_show");//根据当前点击的元素获取到父元素
+			var $v_show = $parent.find("div.v_content_list");//找到“视频内容展示区域”
+			var $v_content = $parent.find("div.v_content");//找到“视频内容展示区”外围的div
+
+			var v_width = $v_content.width();//获取区域内容的宽度，带单位
+
+
+
+			var len = $v_show.find("li").length;//总的视频数
+			var page_count = Math.ceil(len / i);//只要不是整数，就往大的方向取最小的整数
+			
+			if(!$v_show.is(":animated")){
+							//判断“视频内容展示区”是否正处于动画
+				if(page == page_count){
+										//已经最后一个版面了，如果再往后，必须跳转到第一个版面
+				$v_show.animate({left:"0px"},"slow");
+								//通过改变left值，跳转到第一个版面
+
+				page = 1;
+			}else{
+				$v_show.animate({left:"-="+v_width},"slow");
+												//改变left值，达到每次换一个版面
+				page++;
+			}
+			}
+			
+			$parent.find("span").eq((page-1)).addClass("current").siblings().removeClass("current");
+		});
+
+			$("span.prev").click(function(){//绑定 click 事件
+
+				var $parent = $(this).parents("div.v_show");//根据当前点击的元素获取到父元素
+			var $v_show = $parent.find("div.v_content_list");//找到“视频内容展示区域”
+			var $v_content = $parent.find("div.v_content");//找到“视频内容展示区”外围的div
+
+			var v_width = $v_content.width();//获取区域内容的宽度，带单位
+
+
+
+			var len = $v_show.find("li").length;//总的视频数
+			var page_count = Math.ceil(len / i);//只要不是整数，就往大的方向取最小的整数
+		if(!$v_show.is(":animated")){
+							//判断“视频内容展示区”是否正处于动画
+				if(page == 1){
+										//已经第一个版面了，如果再往前，必须跳转到最后一个版面
+				$v_show.animate({left:'-='+v_width*(page_count-1)},"slow");
+								//通过改变left值，跳转到第一个版面
+
+				page = page_count;
+			}else{
+				$v_show.animate({left:"+="+v_width},"slow");
+												//改变left值，达到每次换一个版面
+				page--;
+			}
+			}
+			$parent.find("span").eq((page-1)).addClass("current").siblings().removeClass("current");
+		
+		});
+	</script>
+</body>
+</html>

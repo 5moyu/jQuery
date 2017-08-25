@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bind基本效果</title>
+	<style>
+		#panel{
+			width: 300px;
+			border: 1px solid #ddd;
+			font-size: 14px;
+		}
+		.head{
+			background-color: #eee;
+			height: 30px;
+			line-height: 30px;
+			margin: 0;
+			font-size: 14px;
+			padding-left: 4px;
+			cursor: pointer;
+		}
+		.content{
+			padding: 10px;
+			border-top: 1px solid #ddd;
+			text-indent: 2em;
+			display: none;
+		}
+		.highlight{
+			background-color:#FF3300;
+			color: #fff;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+</head>
+<body>
+	<div id="panel">
+		<h5 class="head">什么是jQuery</h5>
+		<div class="content">
+			jQuery是继prototype之后又一个优秀的JavaScript库，它是一个由John resig 创建于2006年1月的开源项目，jQuery凭借简洁的语法和跨平台的兼容性，极大地简化了JavaScript开发人员遍历HTML文档、操作DOM、处理事件、执行动画和开发ajax。它独特而又优雅的代码风格改变了JavaScript程序员的设计思路和编写程序的方式。
+		</div>
+	</div>
+
+	<!-- <script>
+		$(function(){
+			$("#panel h5.head").bind("click",function(){
+				var $content = $(this).next("div.content");
+				if($content.is(":visible")){
+					$content.hide();
+				}else{
+					$content.show();
+				}
+			});
+		});
+	</script> -->
+
+	<!-- <script>
+		$(function(){
+			$("#panel h5.head").hover(function(){
+				$(this).next("div.content").show();
+			},function(){
+				$(this).next("div.content").hide();
+			});
+		});
+	</script> -->
+
+	<!-- <script>
+		$(function(){
+			$("#panel h5.head").bind("click",function(){
+				var $content = $(this).next("div.content");
+				if($content.is(":visible")){
+					$content.fadeOut();
+				}else{
+					$content.fadeIn();  //淡入淡出
+				}
+			});
+		});
+	</script> -->
+
+	<script>
+		$(function(){
+			$("#panel h5.head").bind("click",function(){
+				var $content = $(this).next("div.content");
+				var $this = $(this);
+				if($content.is(":visible")){
+					$this.removeClass("highlight");
+					$content.slideUp();
+				}else{
+					$this.addClass("highlight");
+					$content.slideDown();  
+				}
+			});
+		});
+	</script>
+</body>
+</html>
